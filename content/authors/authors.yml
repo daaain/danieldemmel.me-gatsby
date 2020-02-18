@@ -1,24 +1,10 @@
-- name: Dennis Brotzky
+- name: Daniel Demmel
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
+    Design technologist / web dev @berylbikes, ex @ustwo, ♥ open source, degrowth & spiritual ecology activist, minimalist, vegetarian, @zzuuu's husband, dad, INTP
+  avatar: ./avatars/dain.jpg
   social:
-    - url: https://unsplash.com
-    - url: https://stackoverflow.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
+    - url: https://twitter.com/daaain
+    - url: https://github.com/daaain
+    - url: https://stackoverflow.com/dain
+    - url: https://www.linkedin.com/in/danieldemmel/
   featured: true
-
-- name: Thiago Costa
-  bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/thiago-costa.png
-  social:
-    - url: https://unsplash.com
-    - url: https://stackoverflow.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
