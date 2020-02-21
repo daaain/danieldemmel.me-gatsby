@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "preinstall": "git clone https://github.com/narative/gatsby-theme-novela",
+    "preinstall": "if [ -d 'gatsby-theme-novela' ]; then rm -Rf gatsby-theme-novela; fi && git clone https://github.com/narative/gatsby-theme-novela && cd gatsby-theme-novela && git reset --hard be0eee411a70b43add0cb31287fe9dbdda171de2 && cd ..",
     "build": "gatsby build",
     "dev": "gatsby develop",
     "clean": "gatsby clean"
