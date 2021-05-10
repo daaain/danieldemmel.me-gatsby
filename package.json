@@ -4,15 +4,16 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "preinstall": "if [ -d 'gatsby-theme-novela' ]; then rm -Rf gatsby-theme-novela; fi && git clone https://github.com/narative/gatsby-theme-novela && cd gatsby-theme-novela && git reset --hard be0eee411a70b43add0cb31287fe9dbdda171de2 && cd ..",
     "build": "gatsby build",
     "dev": "gatsby develop",
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@narative/gatsby-theme-novela": "./gatsby-theme-novela/@narative/gatsby-theme-novela",
     "gatsby": "^2.19.18",
+    "@narative/gatsby-theme-novela": "0.18.3",
     "gatsby-plugin-manifest": "^2.2.41",
+    "gatsby-plugin-meta-redirect": "^1.1.1",
+    "gatsby-redirect-from": "^0.2.4",
     "gatsby-remark-responsive-iframe": "^2.2.32",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

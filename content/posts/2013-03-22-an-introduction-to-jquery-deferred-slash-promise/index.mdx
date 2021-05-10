@@ -9,11 +9,11 @@ excerpt: The first iteration of a product should be about learning
 
 Update 2 (2015/10/23) I realised I should really put an update on this post, at this point you should really not use Deferred and instead of jQuery (or any other 3rd party library) just start relying on the native ES6 / ES2015 Promise – unless you need some advanced functionality, in which case try something like [Bluebird](https://github.com/petkaantonov/bluebird).
 
-For a more up to date introduction to Promises, check out [this post on the PouchDB blog](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html).
+For a more up to date introduction to Promises, check out [this post on the PouchDB blog](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html).
 
 ---
 
-I gave an introductory talk a while back at the [London Ajax User Group](http://www.meetup.com/londonajax/events/100830572/) about jQuery Promises after which there was a lively debate, so I thought it would be great to post the content of the slides with some notes as a sort of tutorial.
+I gave an introductory talk a while back at the [London Ajax User Group](https://www.meetup.com/halfstack/events/100830572/) about jQuery Promises after which there was a lively debate, so I thought it would be great to post the content of the slides with some notes as a sort of tutorial.
 
 Update (2012/09/01): As it turns out there was a nice video recorded of the talk, if you have 10 minutes free give it a watch!
 
@@ -21,7 +21,7 @@ Update (2012/09/01): As it turns out there was a nice video recorded of the talk
 
 Introduction to jQuery Promises / Deferreds - London Ajax User Group 12.02.2013.
 
-The original presentation is on Github (made with [Keydown](https://github.com/infews/keydown) as presentation engine which doesn't seem to handle resizing well enough to be embeddable): [daaain.github.com/jquery-deferred-intro/jquery-deferred-intro/slides.html](http://daaain.github.com/jquery-deferred-intro/jquery-deferred-intro/slides.html)
+The original presentation is on Github (made with [Keydown](https://github.com/infews/keydown) as presentation engine which doesn't seem to handle resizing well enough to be embeddable): [https://www.danieldemmel.me/jquery-deferred-intro/jquery-deferred-intro/slides.html](https://www.danieldemmel.me/jquery-deferred-intro/jquery-deferred-intro/slides.html)
 
 ## A simple CORS AJAX example
 
@@ -30,7 +30,7 @@ As a simple scenario to optimise I set up a not very useful example of loading 2
 <iframe
   width="100%"
   height="300"
-  src="http://jsfiddle.net/dain/87uPV/3/embedded/result"
+  src="//jsfiddle.net/dain/87uPV/3/embedded/result"
   allowfullscreen="allowfullscreen"
   frameborder="0"
 ></iframe>
@@ -42,7 +42,7 @@ As a simple scenario to optimise I set up a not very useful example of loading 2
 ```javascript
 $.ajax({
   type: "GET",
-  url: "http://www.html5rocks.com/en/tutorials/file/xhr2/",
+  url: "https://www.html5rocks.com/en/tutorials/file/xhr2/",
   success: function(response) {
     var insertDiv1 = $("<div></div>");
     insertDiv1.html(
@@ -52,7 +52,7 @@ $.ajax({
     );
     $.ajax({
       type: "GET",
-      url: "http://www.html5rocks.com/en/tutorials/audio/scheduling/",
+      url: "https://www.html5rocks.com/en/tutorials/audio/scheduling/",
       success: function(response) {
         var insertDiv2 = $("<div></div>");
         insertDiv2.html(
@@ -73,7 +73,7 @@ $.ajax({
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "http://www.html5rocks.com/en/tutorials/file/xhr2/",
+    url: "https://www.html5rocks.com/en/tutorials/file/xhr2/",
     success: function(response) {
       var insertDiv1 = $("<div></div>");
       insertDiv1.html(
@@ -83,7 +83,7 @@ $(document).ready(function() {
       );
       $.ajax({
         type: "GET",
-        url: "http://www.html5rocks.com/en/tutorials/audio/scheduling/",
+        url: "https://www.html5rocks.com/en/tutorials/audio/scheduling/",
         success: function(response) {
           var insertDiv2 = $("<div></div>");
           insertDiv2.html(
@@ -177,10 +177,10 @@ function getReady() {
 }
 
 var firstRequest = $.ajax({
-    url: "http://www.html5rocks.com/en/tutorials/file/xhr2/"
+    url: "https://www.html5rocks.com/en/tutorials/file/xhr2/"
   }),
   secondRequest = $.ajax({
-    url: "http://www.html5rocks.com/en/tutorials/audio/scheduling/"
+    url: "https://www.html5rocks.com/en/tutorials/audio/scheduling/"
   });
 
 $.when(getReady(), firstRequest, secondRequest).done(function(
@@ -218,10 +218,10 @@ function getReady() {
 }
 
 var firstRequest = $.ajax({
-    url: "http://www.html5rocks.com/en/tutorials/file/xhr2/"
+    url: "https://www.html5rocks.com/en/tutorials/file/xhr2/"
   }),
   secondRequest = $.ajax({
-    url: "http://www.html5rocks.com/en/tutorials/audio/scheduling/"
+    url: "https://www.html5rocks.com/en/tutorials/audio/scheduling/"
   }),
   firstDiv,
   secondDiv;
@@ -249,25 +249,25 @@ $.when(firstRequest, secondRequest)
 
 When a Promise gets `reject()`ed it will immediately cascade down the `then()` chain so you only need to handle it at the end (with jQuery it's only since 1.8+ though).
 
-```
+```javascript
 getTweetsFor("domenic") // promise-returning function
-  .then(function (tweets) {
+  .then(function(tweets) {
     var shortUrls = parseTweetsForUrls(tweets);
     var mostRecentShortUrl = shortUrls[0];
     return expandUrlUsingTwitterApi(mostRecentShortUrl); // promise-returning function
   })
   .then(httpGet) // promise-returning function
   .then(
-    function (responseBody) {
+    function(responseBody) {
       console.log("Most recent link text:", responseBody);
     },
-    function (error) {
+    function(error) {
       console.error("Error with the twitterverse:", error);
     }
   );
 ```
 
-I've taken this example from [Domenic Denicola's blog post "You're Missing the Point of Promises"](http://domenic.me/2012/10/14/youre-missing-the-point-of-promises/) which is a great next step on the path of understanding Promises and asynchronous control flows. Go and read it now!
+I've taken this example from [Domenic Denicola's blog post "You're Missing the Point of Promises"](https://blog.domenic.me/youre-missing-the-point-of-promises/) which is a great next step on the path of understanding Promises and asynchronous control flows. Go and read it now!
 
 ## A few more pointers
 
@@ -282,4 +282,4 @@ $.when({ testing: 123 }).done(
 );
 ```
 
-- And finally it must be said that jQuery Deferred is by far not the only one, see [Promises/A spec](http://wiki.commonjs.org/wiki/Promises/A) and the clarified [Promises/A+ spec](http://promises-aplus.github.com/promises-spec/). If you're not already using jQuery then [Q](https://github.com/kriskowal/q), [rsvp.js](https://github.com/tildeio/rsvp.js) or [when](https://github.com/cujojs/when) might be better alternatives with seamless interoperability due to stricter adherence to the CommonJS specs.
+- And finally it must be said that jQuery Deferred is by far not the only one, see [Promises/A spec](http://wiki.commonjs.org/wiki/Promises/A) and the clarified [Promises/A+ spec](https://promisesaplus.com/). If you're not already using jQuery then [Q](https://github.com/kriskowal/q), [rsvp.js](https://github.com/tildeio/rsvp.js) or [when](https://github.com/cujojs/when) might be better alternatives with seamless interoperability due to stricter adherence to the CommonJS specs.

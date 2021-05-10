@@ -71,3 +71,4 @@ yarn-error.log
 .netlify/
 
 gatsby-theme-novela
+.dccache
