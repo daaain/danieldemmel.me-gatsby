@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "gatsby": "^2.19.18",
-    "@narative/gatsby-theme-novela": "0.18.3",
+    "@narative/gatsby-theme-novela": "0.18.7",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-redirect-from": "^0.2.4",
